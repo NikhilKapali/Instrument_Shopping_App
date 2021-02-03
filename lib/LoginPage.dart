@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/SignUpPage.dart';
 import 'package:shopping_app/StylesScheme.dart';
+import 'SignUpPage.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -102,12 +104,137 @@ class _loginPageState extends State<loginPage> {
                       ),
                     ),
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          height: 2,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      Center(
+                        child: Container(
+                          padding: EdgeInsets.all(10),
+                          child: Text("OR"),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 2,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        height: 60,
+                        width: 60,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 0.5,
+                          ),
+                        ),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    "assets/images/google_logo.png")),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Container(
+                        height: 60,
+                        width: 60,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 0.5,
+                          ),
+                        ),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage("assets/images/insta.png")),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Container(
+                        height: 60,
+                        width: 60,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 0.5,
+                          ),
+                        ),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    "assets/images/facebook_logo.png")),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Bruhh You New Here??",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontFamily: 'sfpro',
+                    color: Colors.red[900],
+                  ),
+                ),
+                InkWell(
+                  onTap: openSignUp,
+                  child: Text(
+                    "SIGN UP",
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.indigo[900],
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10,
             ),
           ],
         ),
       ),
     );
+  }
+
+  void openSignUp() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => SignUpPage()));
   }
 }
