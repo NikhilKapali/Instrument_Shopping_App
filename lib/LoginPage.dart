@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shopping_app/SignUpPage.dart';
 import 'package:shopping_app/StylesScheme.dart';
 import 'SignUpPage.dart';
+import 'homepage/HomePage.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -83,7 +84,7 @@ class _loginPageState extends State<loginPage> {
                     height: 30,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: openHomePage,
                     child: Container(
                       padding: EdgeInsets.symmetric(vertical: 20),
                       width: MediaQuery.of(context).size.width,
@@ -236,5 +237,10 @@ class _loginPageState extends State<loginPage> {
   void openSignUp() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => SignUpPage()));
+  }
+
+  void openHomePage() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => HomePage()));
   }
 }
