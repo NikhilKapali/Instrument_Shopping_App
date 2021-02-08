@@ -28,6 +28,7 @@ class _homePageState extends State<homePage> {
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios_rounded),
+          tooltip: 'Go Back?',
         ),
         title: Text(
           "GUITAR MINE",
@@ -35,7 +36,12 @@ class _homePageState extends State<homePage> {
             color: Colors.black,
           ),
         ),
-        actions: [IconButton(icon: Icon(Icons.notifications))],
+        actions: [
+          IconButton(
+            icon: Icon(Icons.notifications),
+            tooltip: 'Your Notifications',
+          )
+        ],
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 20),

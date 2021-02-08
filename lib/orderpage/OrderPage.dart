@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/StylesScheme.dart';
+import 'package:shopping_app/orderpage/PickupTimePage.dart';
+import 'PickupTimePage.dart';
 
 class OrderPage extends StatelessWidget {
   @override
@@ -25,6 +27,7 @@ class _orderPageState extends State<orderPage> {
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios_rounded),
+          tooltip: 'Go Back?',
         ),
         title: Text(
           "ORDER YOUR SHIT",
@@ -32,7 +35,12 @@ class _orderPageState extends State<orderPage> {
             color: Colors.black,
           ),
         ),
-        actions: [IconButton(icon: Icon(Icons.notifications))],
+        actions: [
+          IconButton(
+            icon: Icon(Icons.notifications),
+            tooltip: 'Your Notifications',
+          )
+        ],
       ),
       body: Container(
         padding: EdgeInsets.all(10),
@@ -62,6 +70,53 @@ class _orderPageState extends State<orderPage> {
                     productWidget("product2", "Guitar 9", "500"),
                     productWidget("product3", "Guitar 10", "200"),
                   ],
+                ),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: [
+                    Text(
+                      "Your Bag",
+                      style: headingStyle,
+                    ),
+                    Text(
+                      "5 items added",
+                      style: headingStyle,
+                    ),
+                  ],
+                ),
+                Text(
+                  "\$1400",
+                  style: headingStyle,
+                )
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => PickUpTimePage()));
+              },
+              child: Container(
+                padding: EdgeInsets.all(20),
+                height: 70,
+                decoration: BoxDecoration(
+                  gradient: gradientStyle,
+                ),
+                child: Center(
+                  child: Text(
+                    "SELECT DATE & TIME",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -160,6 +215,16 @@ class _orderPageState extends State<orderPage> {
                 ),
               ],
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Container(
+                height: 1,
+                width: MediaQuery.of(context).size.width * 0.70,
+                color: Colors.indigo[400],
+              )
+            ],
           ),
         ],
       ),
