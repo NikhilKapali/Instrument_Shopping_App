@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:shopping_app/StylesScheme.dart';
+import 'package:shopping_app/OrderPage/OrderPage.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -36,7 +37,7 @@ class _homePageState extends State<homePage> {
         ),
         actions: [IconButton(icon: Icon(Icons.notifications))],
       ),
-      body: Container(
+      body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -86,7 +87,7 @@ class _homePageState extends State<homePage> {
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 5,
             ),
             Text(
               "SERVICES",
@@ -117,10 +118,10 @@ class _homePageState extends State<homePage> {
                             style: headingStyle,
                           ),
                           SizedBox(
-                            height: 10,
+                            height: 5,
                           ),
                           InkWell(
-                            onTap: () {},
+                            onTap: openOrderPage,
                             child: Container(
                               decoration: BoxDecoration(
                                 gradient: gradientStyle,
@@ -145,7 +146,7 @@ class _homePageState extends State<homePage> {
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 5,
             ),
             Container(
               padding: EdgeInsets.all(20),
@@ -169,14 +170,14 @@ class _homePageState extends State<homePage> {
                     ],
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 5,
                   ),
                   Text("We are available when ever you want us to be brother"),
                 ],
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 5,
             ),
             Container(
               padding: EdgeInsets.all(20),
@@ -190,7 +191,7 @@ class _homePageState extends State<homePage> {
                     style: contentStyle,
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 5,
                   ),
                   Text(
                     "You can check time estimation with prices",
@@ -221,6 +222,35 @@ class _homePageState extends State<homePage> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: Colors.indigo[900],
+        iconSize: 30,
+        onTap: (value) => {},
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text("Home"),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.track_changes),
+            title: Text("Track Order"),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.view_list),
+            title: Text("My Orders"),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            title: Text("Profile"),
+          ),
+        ],
+      ),
     );
+  }
+
+  void openOrderPage() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => OrderPage()));
   }
 }

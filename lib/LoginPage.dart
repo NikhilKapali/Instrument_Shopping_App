@@ -29,11 +29,11 @@ class _loginPageState extends State<loginPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 50,
+              height: 40,
             ),
             Container(
-              height: 70,
-              width: 70,
+              height: 100,
+              width: 100,
               decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/images/logo.png")),

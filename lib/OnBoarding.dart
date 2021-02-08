@@ -40,7 +40,7 @@ class _onboardingState extends State<onboarding> {
                 child: PageView(
                   controller: _pageController,
                   children: [
-                    onBoardPage("onBoard1", "Choose Your Weapon"),
+                    onBoardPage("guitar", "Choose Your Weapon"),
                     onBoardPage("onBoard2", "Pickup Your Weapon"),
                     onBoardPage("onBoard3", "Get The Best Weapon"),
                     onBoardPage("onBoard2", "Get On Time Delivery"),
