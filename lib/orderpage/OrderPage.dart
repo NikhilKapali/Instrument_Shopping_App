@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/StylesScheme.dart';
 import 'package:shopping_app/orderpage/PickupTimePage.dart';
-import 'PickupTimePage.dart';
 
 class OrderPage extends StatelessWidget {
   @override

@@ -3,6 +3,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:shopping_app/StylesScheme.dart';
 import 'package:shopping_app/OrderPage/OrderPage.dart';
+import 'package:shopping_app/orderpage/ConfirmOrderPage.dart';
+import 'package:shopping_app/orderpage/PickupTimePage.dart';
+import 'package:shopping_app/orderpage/TrackOrderPage.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -193,7 +196,7 @@ class _homePageState extends State<homePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "CHECK THE ESTIATION",
+                    "CHECK THIS SHITTT",
                     style: contentStyle,
                   ),
                   SizedBox(
@@ -227,30 +230,6 @@ class _homePageState extends State<homePage> {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.indigo[900],
-        iconSize: 30,
-        onTap: (value) => {},
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text("Home"),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.track_changes),
-            title: Text("Track Order"),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.view_list),
-            title: Text("My Orders"),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            title: Text("Profile"),
-          ),
-        ],
       ),
     );
   }

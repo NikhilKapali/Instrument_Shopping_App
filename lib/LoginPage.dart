@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/SignUpPage.dart';
 import 'package:shopping_app/StylesScheme.dart';
+import 'package:shopping_app/homepage/ButtomNavigation.dart';
 import 'SignUpPage.dart';
 import 'homepage/HomePage.dart';
 
@@ -241,6 +242,6 @@ class _loginPageState extends State<loginPage> {
 
   void openHomePage() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => HomePage()));
+        context, MaterialPageRoute(builder: (context) => ButtomNavigation()));
   }
 }
